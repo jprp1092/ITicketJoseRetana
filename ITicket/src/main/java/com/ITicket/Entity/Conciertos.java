@@ -23,10 +23,10 @@ public class Conciertos implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String nombreEvento;
+    private String nombre;
     private String costo;
     private String fecha;
-    private String capacidadMax;
+    private String capacidad;
     private String lugar;
     
     @ManyToOne
@@ -41,12 +41,12 @@ public class Conciertos implements Serializable{
         this.id = id;
     }
 
-    public String getNombreEvento() {
-        return nombreEvento;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreEvento(String nombreEvento) {
-        this.nombreEvento = nombreEvento;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getCosto() {
@@ -65,12 +65,12 @@ public class Conciertos implements Serializable{
         this.fecha = fecha;
     }
 
-    public String getCapacidadMax() {
-        return capacidadMax;
+    public String getCapacidad() {
+        return capacidad;
     }
 
-    public void setCapacidadMax(String capacidadMax) {
-        this.capacidadMax = capacidadMax;
+    public void setCapacidad(String capacidad) {
+        this.capacidad = capacidad;
     }
 
     public String getLugar() {
@@ -88,6 +88,8 @@ public class Conciertos implements Serializable{
     public void setArtistas(Artistas artistas) {
         this.artistas = artistas;
     }
+
+
     
     
 }

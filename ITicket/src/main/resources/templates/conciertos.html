@@ -27,10 +27,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <tbody>
             <th:block th:each="user : ${conciertos}"> <!--Por cada usuario en personas-->
                 <tr>
-                    <td th:text="${user.getNombreEvento}"></td> <!--td = table date, user es un objeto de tipo persona-->
+                    <td th:text="${user.getNombre}"></td> <!--td = table date, user es un objeto de tipo persona-->
                     <td th:text="${user.getCosto}"></td>
                     <td th:text="${user.getFecha}"></td>
-                    <td th:text="${user.getCapacidadMax}"></td>
+                    <td th:text="${user.getCapacidad}"></td>
                     <td th:text="${user.getLugar}"></td>
                     <td th:text="${user.getArtistas.getNombre}"></td>
                     <td><a th:href="@{/editConciertos/{id}(id=${user.getId})}">Edit</a></td> 
