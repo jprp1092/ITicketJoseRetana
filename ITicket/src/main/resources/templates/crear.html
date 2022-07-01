@@ -3,7 +3,6 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<!doctype html>
 <html xmlns:th="http://www.thymeleaft.org">
     <head>
         <meta charset="utf-8">
@@ -19,9 +18,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <form th:object = "${conciertos}"
                   th:action = "@{/save}"
                   method = "POST"> <!-- en la primera linea se pasa un objeto tipo persona porque en la linea 46 de PersonaController se puse persona-->
-
+                    
                 <div class="col-md-auto"> 
-                    <h1>Crear nuevo cliente</h1>
+                    <h1>Crear nuevo evento</h1>
                     <input type="hidden" th:field="*{id}">
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Nombre Evento</label>
@@ -36,7 +35,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{fecha}">
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Capacidad Max</label>
+                        <label for="formGroupExampleInput2" class="form-label">Capacidad Maxima</label>
                         <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{capacidadMax}">
                     </div>
                     <div class="mb-3">
@@ -44,12 +43,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{lugar}">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="local">Artista</label>
+                        <label class="form-label" for="artistas">Artista</label>
                         <div class="col-sm-10">
-                            <select th:field="*{artistas}" class="form-control form-control-sm col-md-6" id="local" aria-describedby="emailHelp">
-                                <option th:each="x:${artistas}"
+                            <select th:field="*{artistas}" class="form-control form-control-sm col-md-6" id="artistas" aria-describedby="emailHelp">
+                                <!-- Como se llama la tabla en la base de datos -->
+                                <option th:each="x:${artistas}" 
                                         th:value="${x.id}" 
-                                        th:text="${x.nombre}"/> 
+                                        th:text="${x.nombre}"/> <!-- value va a hacer nuestro valor y key que va a hacer el texto   --> <!-- por cada x que este en paises quiero que extraiga el id y el nombre, paises va a hacer la lista de paises creadas en controller  -->    
                             </select>        
                         </div>
                     </div>
