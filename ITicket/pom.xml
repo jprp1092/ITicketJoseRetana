@@ -8,11 +8,11 @@
         <version>2.7.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.ITicket</groupId>
-    <artifactId>ITicket</artifactId>
+    <groupId>com.iticket</groupId>
+    <artifactId>iticket</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ITicket</name>
-    <description>App para tiquetes</description>
+    <name>iticket</name>
+    <description>App para boletos</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -52,23 +52,22 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
-</dependencies>
 
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <excludes>
-                    <exclude>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok</artifactId>
-                    </exclude>
-                </excludes>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

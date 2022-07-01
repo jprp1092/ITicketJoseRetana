@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaft.org">
+    <head>
+        <title>Conciertos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1 th:text="${titulo}"></h1>
+        <table class="table table-dark table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre Evento</th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Capacidad Max</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Artista</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="user : ${conciertos}"> <!--Por cada usuario en personas-->
+                <tr>
+                    <td th:text="${user.getNombreEvento}"></td> <!--td = table date, user es un objeto de tipo persona-->
+                    <td th:text="${user.getCosto}"></td>
+                    <td th:text="${user.getFecha}"></td>
+                    <td th:text="${user.getCapacidadMax}"></td>
+                    <td th:text="${user.getLugar}"></td>
+                    <td th:text="${user.getArtistas.getNombre}"></td>
+                    <td><a th:href="@{/editConciertos/{id}(id=${user.getId})}">Edit</a></td> 
+                    <td><a th:href="@{/delete/{id}(id=${user.getId})}">Delete</a></td>
+                </tr>
+            </th:block>     
+        </tbody>
+    </table>
+</body>
+
+</html>

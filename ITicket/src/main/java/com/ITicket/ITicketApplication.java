@@ -1,13 +1,13 @@
-package com.ITicket;
+package com.iticket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ITicketApplication {
+public class IticketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ITicketApplication.class, args);
+		SpringApplication.run(IticketApplication.class, args);
 	}
 
 }
